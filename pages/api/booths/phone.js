@@ -1,5 +1,5 @@
 import dbConnect from '../../../lib/mongodb';
-import VoterList from '../../../models/voterList';
+import Voterlistmadukarai from '../../../models/VoterListmadukarai';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
 
     console.log('MongoDB query:', JSON.stringify(query, null, 2)); // Debug log
 
-    const results = await VoterList.find(query);
+    const results = await Voterlistmadukarai.find(query);
     
     console.log('Query result count:', results.length); // Debug log
 

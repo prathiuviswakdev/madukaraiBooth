@@ -1,5 +1,5 @@
 import dbConnect from '../../../lib/mongodb';
-import VoterList from '../../../models/voterList';
+import VoterListmadukarai from '../../../models/VoterListmadukarai';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -32,12 +32,10 @@ export default async function handler(req, res) {
       };
     }
 
-    console.log('MongoDB query:', JSON.stringify(query, null, 2)); // Debug log
 
-    const person = await VoterList.find(query);
+
+    const person = await VoterListmadukarai.find(query);
     
-    console.log('Query result count:', person.length); // Debug log
-
     // Always return 200 with results, even if empty
     res.status(200).json(person);
 

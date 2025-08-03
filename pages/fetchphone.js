@@ -32,11 +32,15 @@ export default function Fetchphone() {
           className="bg-black hover:bg-grey text-white font-bold py-2 px-6 rounded-xl"
         >
           <option value="all">All Booths</option>
-          <option value="62">Booth 62</option>
-          <option value="63">Booth 63</option>
-          <option value="164">Booth 164</option>
-          <option value="165">Booth 165</option>
-          <option value="167">Booth 167</option>
+          <option value="202">Booth 202</option>
+          <option value="203">Booth 204</option>
+          <option value="204">Booth 204</option>
+          <option value="205">Booth 205</option>
+          <option value="206">Booth 206</option>
+          <option value="207">Booth 207</option>
+          <option value="208">Booth 208</option>
+          <option value="209">Booth 209</option>
+          <option value="210">Booth 210</option>
         </select>
         <div className="flex flex-col sm:flex-row gap-4 py-2 px-6"></div>
       <div className="flex flex-col sm:flex-row gap-4">

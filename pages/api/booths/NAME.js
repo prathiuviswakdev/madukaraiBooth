@@ -1,5 +1,5 @@
 import dbConnect from '../../../lib/mongodb';
-import VoterList from '../../../models/voterList';
+import VoterListmadukarai from '../../../models/VoterListmadukarai';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -8,19 +8,16 @@ export default async function handler(req, res) {
 
   try {
     await dbConnect();
-    
     const name = String(req.query.name);
     const booth = req.query.booth;
 
-    // Create query to search in both NameENG and Name (Tamil) fields
     let query = {
       $or: [
-        { NameENG: { $regex: name, $options: 'i' } }, // Case-insensitive search in English name
-        { Name: { $regex: name, $options: 'i' } }     // Case-insensitive search in Tamil name
+        { NameENG: { $regex: name, $options: 'i' } },
+        { Name: { $regex: name, $options: 'i' } }
       ]
     };
 
-    // Add booth filter if specified
     if (booth && booth !== 'all') {
       query = {
         $and: [
@@ -30,13 +27,10 @@ export default async function handler(req, res) {
       };
     }
 
-    const person = await VoterList.find(query);
+    const person = await VoterListmadukarai.find(query);
 
-    if (person && person.length > 0) {
-      res.status(200).json(person);
-    } else {
-      res.status(404).json({ message: "Person not found." });
-    }
+    // Always return 200 with results, even if empty
+    res.status(200).json(person);
   } catch (error) {
     console.error('Error retrieving person:', error);
     res.status(500).json({ message: "Internal Server Error" });

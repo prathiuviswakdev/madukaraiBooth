@@ -1,5 +1,5 @@
 import dbConnect from '../../../lib/mongodb';
-import VoterList from '../../../models/voterList';
+import Voterlistmadukarai from '../../../models/VoterListmadukarai';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     await dbConnect();
     
     const id = String(req.query.id);
-    const person = await VoterList.findOne({ VoterID: id });
+    const person = await Voterlistmadukarai.findOne({ VoterID: id });
 
     if (person) {
       res.status(200).json(person);
