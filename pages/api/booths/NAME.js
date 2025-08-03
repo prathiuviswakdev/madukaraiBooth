@@ -13,8 +13,8 @@ export default async function handler(req, res) {
 
     let query = {
       $or: [
-        { NameENG: { $regex: name, $options: 'i' } },
-        { Name: { $regex: name, $options: 'i' } }
+        { NameENG: name },
+        { Name: name }
       ]
     };
 

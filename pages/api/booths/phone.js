@@ -17,8 +17,8 @@ export default async function handler(req, res) {
     // Create query to search in both Phone and Govt_Phone fields
     let query = {
       $or: [
-        { Phone: { $regex: phone, $options: 'i' } },      // Search in Phone field
-        { Govt_Phone: { $regex: phone, $options: 'i' } }  // Search in Govt_Phone field
+        { Phone: phone },      // Exact match in Phone field
+        { Govt_Phone: phone }  // Exact match in Govt_Phone field
       ]
     };
 
