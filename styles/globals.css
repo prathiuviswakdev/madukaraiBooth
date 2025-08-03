@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border: 215.4 16.3% 46.9%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 215 20.2% 65.1%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 142.1 76.2% 36.3%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 145 80% 10%;
+  --secondary-foreground: 355.7 100% 97.3%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 142 70% 50%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --radius: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #010505;
+  background-image: linear-gradient(135deg, #020505 0%, #000000 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+button {
+  background-color: #000000; /* Dark grey */
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #222222; /* Darker grey on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgb(243, 2, 2);
+}
+
+/* White button variant - use class="btn-white" */
+.btn-white {
+  background-color: white;
+  color: #333333;
+  border: 1px solid #333333;
+}
+
+.btn-white:hover {
+  background-color: #f8f8f8;
+  color: #222222;
+}
+
+.navbar {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.navbar:hover {
+  color: #ffffff;
+  background-color: #0f0e24;
+}
+
+.navbarbg {
+  background-color: #000000;
+}
+
+.result {
+  color: rgb(243, 243, 243);
+  font-size: 1.1rem;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(233, 75, 75, 0.6),
+      rgb(255, 0, 0)
+    ),
+    url("");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.result:hover {
+  transform: translateY(-5px);
+  background-image: linear-gradient(
+      to bottom,
+      rgb(255, 0, 0),
+      rgb(255, 0, 0)
+    ),
+    url("");
+}
+
+.resultbg {
+  background-color: transparent;
+}
+
+.SP {
+  background-image: url('/assets/100BSPV.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 85vh;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+
+
+/* ...existing code... */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #ffffff;
+    background-color: #000000;
+  }
+  
+  input {
+    color: #ffffff !important; /* Dark text for input fields in light mode */
+    background-color: rgba(0, 0, 0, 0.9) !important;
+  }
+
+  button {
+    background-color: #000000 !important; /* Consistent button color */
+    color: white !important;
+  }
+
+  button:hover {
+    background-color: #fa0000 !important;
+  }
+
+  /* Add contrast for placeholder text */
+  ::placeholder {
+    color: #666666 !important;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    flex-direction: column; /* Stack items vertically on small screens */
+    min-width: auto; /* Allow the body to shrink to fit the screen */
+  }
+}
+
+/* Loading animation */
+.loader {
+  border-top-color: #fd0000;
+  -webkit-animation: spinner 1s linear infinite;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card hover effects - with frosted glass effect */
+.hover-card {
+  transition: all 0.3s ease;
+  background-color: rgb(255, 0, 0); /* More transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Add subtle gradient border to cards */
+.hover-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Card content - ensure text remains visible on all cards */
+.hover-card h2, .hover-card p {
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Make sure content inside cards is positioned correctly for the border effect */
+.hover-card {
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .SP {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .SP {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .SP {
+    height: 70vh;
+    max-height: 800px;
+  }
+}
+
+/* Optimize inputs for mobile */
+input, select, textarea {
+  font-size: 16px !important; /* Prevents iOS zoom on focus */
+}
+
+/* Improve touch targets on mobile */
+button, a {
+  min-height: 44px;
+}
+
+/* Improve card layouts on smaller screens */
+@media (max-width: 480px) {
+  .hover-card {
+    padding: 1rem;
+  }
+} 
