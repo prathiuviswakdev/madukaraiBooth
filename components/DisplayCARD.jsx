@@ -1,3 +1,5 @@
+import { BsTelephone } from 'react-icons/bs';
+
 export const DisplayCARD = ({ name }) => {
   if (!name) return null;
   
@@ -17,6 +19,9 @@ export const DisplayCARD = ({ name }) => {
           </h2>
           <h2 className="text-sm md:text-base font-bold">
             <span className="text-booth-dark">Door:</span> {name?.House_Number}
+          </h2>
+          <h2 className="text-sm md:text-base font-bold flex items-center gap-2">
+            <span className="text-booth-dark"><BsTelephone size={15} className="inline-block text-black" /></span> {name?.Phone}
           </h2>
         </div>
         
