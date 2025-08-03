@@ -36,8 +36,11 @@ export default async function handler(req, res) {
 
     const person = await VoterListmadukarai.find(query);
     
-    // Always return 200 with results, even if empty
-    res.status(200).json(person);
+    if (person) {
+      res.status(200).json(person);
+    } else {
+      res.status(404).json({ message: "Person not found." });
+    }
 
   } catch (error) {
     console.error('Error retrieving person:', error);
