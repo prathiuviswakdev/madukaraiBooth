@@ -41,6 +41,21 @@ export default function Fetchphone() {
           <option value="208">Booth 208</option>
           <option value="209">Booth 209</option>
           <option value="210">Booth 210</option>
+          <option value="211">Booth 211</option>
+          <option value="212">Booth 212</option>
+          <option value="213">Booth 213</option>
+          <option value="214">Booth 214</option>
+          <option value="215">Booth 215</option>
+          <option value="216">Booth 216</option>
+          <option value="217">Booth 217</option>
+          <option value="218">Booth 218</option>
+          <option value="219">Booth 219</option>
+          <option value="220">Booth 220</option>
+          <option value="221">Booth 221</option>
+          <option value="222">Booth 222</option>
+          <option value="223">Booth 223</option>
+          <option value="224">Booth 224</option>
+          <option value="225">Booth 225</option>
         </select>
         <div className="flex flex-col sm:flex-row gap-4 py-2 px-6"></div>
       <div className="flex flex-col sm:flex-row gap-4">
