@@ -33,7 +33,7 @@ export default function FetchNAME() {
         >
           <option value="all">All Booths</option>
           <option value="202">Booth 202</option>
-          <option value="203">Booth 204</option>
+          <option value="203">Booth 203</option>
           <option value="204">Booth 204</option>
           <option value="205">Booth 205</option>
           <option value="206">Booth 206</option>
@@ -56,6 +56,14 @@ export default function FetchNAME() {
           <option value="223">Booth 223</option>
           <option value="224">Booth 224</option>
           <option value="225">Booth 225</option>
+          <option value="226">Booth 226</option>
+          <option value="227">Booth 227</option>
+          <option value="228">Booth 228</option>
+          <option value="229">Booth 229</option>
+          <option value="230">Booth 230</option>
+          <option value="231">Booth 231</option>
+          <option value="232">Booth 232</option>
+
         </select>
         <div className="flex flex-col sm:flex-row gap-4 py-2 px-6"></div>
       <div className="flex flex-col sm:flex-row gap-4">
